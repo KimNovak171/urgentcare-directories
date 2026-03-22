@@ -141,60 +141,27 @@ const CANADIAN_REGION_SLUGS = new Set([
   "yukon",
 ]);
 
-/** All 50 states + DC — files: `data/{slug}_facilities.json` */
-const US_STATE_SLUGS = [
-  "alabama",
-  "alaska",
-  "arizona",
-  "arkansas",
-  "california",
-  "colorado",
-  "connecticut",
-  "delaware",
-  "district-of-columbia",
-  "florida",
-  "georgia",
-  "hawaii",
-  "idaho",
-  "illinois",
-  "indiana",
-  "iowa",
-  "kansas",
-  "kentucky",
-  "louisiana",
-  "maine",
-  "maryland",
-  "massachusetts",
-  "michigan",
-  "minnesota",
-  "mississippi",
-  "missouri",
-  "montana",
-  "nebraska",
-  "nevada",
-  "new-hampshire",
-  "new-jersey",
-  "new-mexico",
-  "new-york",
-  "north-carolina",
-  "north-dakota",
-  "ohio",
-  "oklahoma",
-  "oregon",
-  "pennsylvania",
-  "rhode-island",
-  "south-carolina",
-  "south-dakota",
-  "tennessee",
-  "texas",
-  "utah",
-  "vermont",
-  "virginia",
-  "washington",
-  "west-virginia",
-  "wisconsin",
-  "wyoming",
-] as const;
+/**
+ * US state slugs from `data/{slug}_facilities.json`, excluding Canadian province files.
+ * readdir errors yield [] (no hardcoded empty state lists).
+ */
+function discoverUsStateFacilitySlugs(): string[] {
+  const dataDir = path.join(process.cwd(), "data");
+  let entries: string[] = [];
+  try {
+    entries = fs.readdirSync(dataDir);
+  } catch {
+    return [];
+  }
+  const suffix = "_facilities.json";
+  return entries
+    .filter((name) => name.endsWith(suffix))
+    .map((name) => name.slice(0, -suffix.length))
+    .filter((slug) => slug.length > 0 && !CANADIAN_REGION_SLUGS.has(slug))
+    .sort((a, b) => a.localeCompare(b));
+}
+
+const US_STATE_SLUGS: readonly string[] = discoverUsStateFacilitySlugs();
 
 function fallbackStateNameFromSlug(stateSlug: string): string {
   return stateSlug
