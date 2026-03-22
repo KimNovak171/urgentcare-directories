@@ -40,10 +40,6 @@ const getCareTypeColor = (type: string): string => {
     return "#1565C0";
   }
 
-  if (normalized.includes("day care")) {
-    return "#0277BD";
-  }
-
   if (normalized.includes("aged care")) {
     return "#00695C";
   }

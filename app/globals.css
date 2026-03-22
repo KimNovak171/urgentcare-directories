@@ -32,7 +32,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Keep the site light (autorepairdirectories.com style) */
+    /* Keep the site light and clean */
     --background: #f4f7fa;
     --foreground: #0f172a;
   }
