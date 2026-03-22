@@ -7,7 +7,7 @@ import {
   getOtherCitiesInProvince,
 } from "@/lib/canadaFacilities";
 
-const siteUrl = "https://occupationaltherapydirectories.com";
+const siteUrl = "https://pediatriciandirectories.com";
 
 type CanadaCityPageProps = {
   params: Promise<{ provinceSlug: string; citySlug: string }>;
@@ -24,8 +24,8 @@ export async function generateMetadata({
   const { provinceName, cityName, facilities: cityFacilities } =
     await getCanadaCityFacilities(safeProvince, safeCity);
   const count = Array.isArray(cityFacilities) ? cityFacilities.length : 0;
-  const title = `Occupational Therapy Practices in ${cityName}, ${provinceName}, Canada | Occupational Therapy Directories`;
-  const description = `Find ${count.toLocaleString()} occupational therapy practices in ${cityName}, ${provinceName}. Compare services and practice details. Verified listings with ratings and reviews.`;
+  const title = `Pediatrician Practices in ${cityName}, ${provinceName}, Canada | Pediatrician Directories`;
+  const description = `Find ${count.toLocaleString()} pediatrician practices in ${cityName}, ${provinceName}. Compare services and practice details. Verified listings with ratings and reviews.`;
 
   return {
     title,
@@ -37,14 +37,14 @@ export async function generateMetadata({
       title,
       description,
       url: canonicalPath,
-      siteName: "OccupationalTherapyDirectories.com",
+      siteName: "PediatricianDirectories.com",
       type: "website",
       images: [
         {
           url: "/og-image.svg",
           width: 1200,
           height: 630,
-          alt: `${cityName}, ${provinceName} occupational therapy practice directory preview`,
+          alt: `${cityName}, ${provinceName} pediatrician practice directory preview`,
         },
       ],
     },
@@ -94,7 +94,7 @@ export default async function CanadaCityPage({ params }: CanadaCityPageProps) {
   const careTypesText =
     careTypes.length > 0
       ? careTypes.slice(0, 4).join(", ")
-      : "occupational therapy services";
+      : "pediatrician services";
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -103,7 +103,7 @@ export default async function CanadaCityPage({ params }: CanadaCityPageProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "OccupationalTherapyDirectories.com",
+        name: "PediatricianDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -130,16 +130,16 @@ export default async function CanadaCityPage({ params }: CanadaCityPageProps) {
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `Occupational Therapy Practices in ${cityName}, ${provinceName}, Canada`,
+    name: `Pediatrician Practices in ${cityName}, ${provinceName}, Canada`,
     url: `${siteUrl}/canada/${provinceSlugNorm}/${citySlugNorm}`,
     isPartOf: {
       "@type": "WebSite",
-      name: "OccupationalTherapyDirectories.com",
+      name: "PediatricianDirectories.com",
       url: `${siteUrl}/`,
     },
     about: [
-      { "@type": "Thing", name: `${cityName} occupational therapy practices` },
-      { "@type": "Thing", name: `${provinceName} occupational therapy services` },
+      { "@type": "Thing", name: `${cityName} pediatrician practices` },
+      { "@type": "Thing", name: `${provinceName} pediatrician services` },
       { "@type": "Thing", name: "Functional assessment" },
       { "@type": "Thing", name: "Daily living skills" },
       { "@type": "Thing", name: "Sensory integration" },
@@ -162,14 +162,14 @@ export default async function CanadaCityPage({ params }: CanadaCityPageProps) {
       />
       <header className="space-y-4">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
-          Occupational therapy by city
+          Pediatrician by city
         </p>
         <h1 className="text-3xl font-semibold text-navy">
-          Occupational Therapy Practices in {cityName}, {provinceName}
+          Pediatrician Practices in {cityName}, {provinceName}
         </h1>
         <p className="max-w-2xl text-sm text-slate-600">
           {cityName} has {facilities.length.toLocaleString()} verified
-          occupational therapy practices including {careTypesText}. Browse all options below,
+          pediatrician practices including {careTypesText}. Browse all options below,
           each with Google Maps profile links and ratings data where available.
         </p>
         <p className="max-w-2xl text-sm text-slate-600">

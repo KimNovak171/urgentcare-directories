@@ -6,7 +6,7 @@ import {
   getProvinceSummary,
 } from "@/lib/canadaFacilities";
 
-const siteUrl = "https://occupationaltherapydirectories.com";
+const siteUrl = "https://pediatriciandirectories.com";
 
 type ProvincePageProps = {
   params: Promise<{ provinceSlug: string }>;
@@ -23,8 +23,8 @@ export async function generateMetadata({
     safeSlug,
   );
 
-  const title = `Occupational Therapy Practices in ${provinceName}, Canada | Occupational Therapy Directories`;
-  const descriptor = `Find ${totalFacilities.toLocaleString()} occupational therapy practices in ${provinceName}, Canada. Compare services and practice details. Verified listings with ratings and reviews.`;
+  const title = `Pediatrician Practices in ${provinceName}, Canada | Pediatrician Directories`;
+  const descriptor = `Find ${totalFacilities.toLocaleString()} pediatrician practices in ${provinceName}, Canada. Compare services and practice details. Verified listings with ratings and reviews.`;
 
   return {
     title,
@@ -36,14 +36,14 @@ export async function generateMetadata({
       title,
       description: descriptor,
       url: canonicalPath,
-      siteName: "OccupationalTherapyDirectories.com",
+      siteName: "PediatricianDirectories.com",
       type: "website",
       images: [
         {
           url: "/og-image.svg",
           width: 1200,
           height: 630,
-          alt: `${provinceName} occupational therapy practice directory preview`,
+          alt: `${provinceName} pediatrician practice directory preview`,
         },
       ],
     },
@@ -95,7 +95,7 @@ export default async function ProvincePage({ params }: ProvincePageProps) {
       {
         "@type": "ListItem",
         position: 1,
-        name: "OccupationalTherapyDirectories.com",
+        name: "PediatricianDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -119,7 +119,7 @@ export default async function ProvincePage({ params }: ProvincePageProps) {
     mainEntity: [
       {
         "@type": "Question",
-        name: `How many occupational therapy practices are in ${provinceName}?`,
+        name: `How many pediatrician practices are in ${provinceName}?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: `Our directory lists ${totalFacilities.toLocaleString()} verified facilities across ${cities.length.toLocaleString()} cities.`,
@@ -127,7 +127,7 @@ export default async function ProvincePage({ params }: ProvincePageProps) {
       },
       {
         "@type": "Question",
-        name: `What types of occupational therapy services are available in ${provinceName}?`,
+        name: `What types of pediatrician services are available in ${provinceName}?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: `${careTypesSentence}.`,
@@ -147,15 +147,15 @@ export default async function ProvincePage({ params }: ProvincePageProps) {
   const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `Occupational Therapy Practices in ${provinceName}, Canada`,
+    name: `Pediatrician Practices in ${provinceName}, Canada`,
     url: `${siteUrl}/canada/${resolvedProvinceSlug}`,
     isPartOf: {
       "@type": "WebSite",
-      name: "OccupationalTherapyDirectories.com",
+      name: "PediatricianDirectories.com",
       url: `${siteUrl}/`,
     },
     about: [
-      { "@type": "Thing", name: `${provinceName} occupational therapy practices` },
+      { "@type": "Thing", name: `${provinceName} pediatrician practices` },
       { "@type": "Thing", name: "Functional assessment" },
       { "@type": "Thing", name: "Daily living skills" },
       { "@type": "Thing", name: "Sensory integration" },
@@ -201,7 +201,7 @@ export default async function ProvincePage({ params }: ProvincePageProps) {
           Province overview
         </p>
         <h1 className="mt-2 text-3xl font-semibold sm:text-4xl">
-          Occupational Therapy Practices in {provinceName}, Canada
+          Pediatrician Practices in {provinceName}, Canada
         </h1>
         <p className="mt-3 max-w-2xl text-sm text-foreground/80">
           Explore {careTypesText} across {provinceName}, including major city
@@ -267,10 +267,10 @@ export default async function ProvincePage({ params }: ProvincePageProps) {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-navy border-b-2 border-teal/50 pb-1 inline-block">
-              Occupational Therapy Practices by City in {provinceName}
+              Pediatrician Practices by City in {provinceName}
             </h2>
             <p className="mt-1 max-w-2xl text-sm text-slate-600">
-              Choose a city to view all listed occupational therapy practices, including
+              Choose a city to view all listed pediatrician practices, including
               common services like functional assessment, daily living skills, and sensory
               integration.
             </p>

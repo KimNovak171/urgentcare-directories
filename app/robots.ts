@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://occupationaltherapydirectories.com/sitemap.xml",
+    sitemap: "https://pediatriciandirectories.com/sitemap.xml",
   };
 }
 

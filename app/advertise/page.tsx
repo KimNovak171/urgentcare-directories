@@ -2,34 +2,34 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Advertise | Get Your Occupational Therapy Practice in Front of Families",
+  title: "Advertise | Get Your Pediatrician Practice in Front of Families",
   description:
-    "Featured and premium listings on OccupationalTherapyDirectories.com. Reach Families actively searching for Occupational Therapy Practices and services across the United States.",
+    "Featured and premium listings on PediatricianDirectories.com. Reach Families actively searching for Pediatrician Practices and services across the United States.",
   alternates: {
     canonical: "/advertise",
     languages: {
-      "en-us": "https://occupationaltherapydirectories.com/advertise",
+      "en-us": "https://pediatriciandirectories.com/advertise",
     },
   },
   openGraph: {
-    title: "Advertise | Get Your Occupational Therapy Practice in Front of Families",
+    title: "Advertise | Get Your Pediatrician Practice in Front of Families",
     description:
-      "A featured listing puts your practice at the top of your city directory section and in front of high-intent visitors at the moment they are choosing an occupational therapy service.",
+      "A featured listing puts your practice at the top of your city directory section and in front of high-intent visitors at the moment they are choosing a pediatrician service.",
     url: "/advertise",
-    siteName: "OccupationalTherapyDirectories.com",
+    siteName: "PediatricianDirectories.com",
     type: "website",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "OccupationalTherapyDirectories.com advertise page preview",
+        alt: "PediatricianDirectories.com advertise page preview",
       },
     ],
   },
 };
 
-const siteUrl = "https://occupationaltherapydirectories.com";
+const siteUrl = "https://pediatriciandirectories.com";
 const STRIPE_LINK_49 = "https://buy.stripe.com/6oU9AT1rQ7DF5NYdXPfAc0c";
 const STRIPE_LINK_99 = "https://buy.stripe.com/3cI9ATfiGe2390a06ZfAc0d";
 
@@ -41,7 +41,7 @@ export default function AdvertisePage() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "OccupationalTherapyDirectories.com",
+        name: "PediatricianDirectories.com",
         item: `${siteUrl}/`,
       },
       {
@@ -62,16 +62,16 @@ export default function AdvertisePage() {
 
       <header className="space-y-3">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal">
-          For Occupational Therapy Practice Owners
+          For Pediatrician Practice Owners
         </p>
         <h1 className="text-3xl font-semibold text-navy sm:text-4xl">
           Get Your Practice in Front of Families Who Are Ready to Choose
         </h1>
         <p className="max-w-3xl text-sm text-slate-600">
-          OccupationalTherapyDirectories.com is visited by Families actively searching for
-          occupational therapy options across the United States. A featured listing puts
+          PediatricianDirectories.com is visited by Families actively searching for
+          pediatrician options across the United States. A featured listing puts
           your practice at the top of your city directory section and in front of
-          high-intent visitors at the moment they are choosing an occupational therapy service.
+          high-intent visitors at the moment they are choosing a pediatrician service.
         </p>
       </header>
 
@@ -121,10 +121,10 @@ export default function AdvertisePage() {
         <p className="text-sm text-slate-700">
           To get started or ask questions, contact us at{" "}
           <a
-            href="mailto:support@occupationaltherapydirectories.com"
+            href="mailto:support@pediatriciandirectories.com"
             className="font-medium text-teal underline underline-offset-2 hover:text-teal-soft"
           >
-            support@occupationaltherapydirectories.com
+            support@pediatriciandirectories.com
           </a>{" "}
           — we&apos;ll have your listing live within 24 hours.
         </p>

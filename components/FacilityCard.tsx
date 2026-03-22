@@ -21,34 +21,7 @@ type FacilityCardProps = {
   facility: Facility;
 };
 
-const getCareTypeColor = (type: string): string => {
-  const normalized = type.toLowerCase();
-
-  if (normalized.includes("assisted")) {
-    return "#2E7D32";
-  }
-
-  if (normalized.includes("nursing")) {
-    return "#BF360C";
-  }
-
-  if (normalized.includes("retirement comm")) {
-    return "#1976D2";
-  }
-
-  if (normalized.includes("retirement home")) {
-    return "#1565C0";
-  }
-
-  if (normalized.includes("aged care")) {
-    return "#00695C";
-  }
-
-  if (normalized.includes("hospice")) {
-    return "#4A148C";
-  }
-
-  // Fallback to brand primary (royal blue) if unknown
+const getCareTypeColor = (_type: string): string => {
   return "#1d4ed8";
 };
 

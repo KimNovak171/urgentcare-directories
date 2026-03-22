@@ -9,11 +9,11 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Contact from Occupational Therapy Directories: ${name}`);
+    const subject = encodeURIComponent(`Contact from Pediatrician Directories: ${name}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );
-    window.location.href = `mailto:support@occupationaltherapydirectories.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:support@pediatriciandirectories.com?subject=${subject}&body=${body}`;
   };
 
   return (

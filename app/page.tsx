@@ -6,26 +6,26 @@ import { getDirectoryIndex, getStateSummary, getGlobalStats } from "@/lib/stateF
 
 export const metadata: Metadata = {
   title:
-    "occupational therapist Directory USA & Canada | Verified occupational therapists",
+    "Pediatrician Directory USA & Canada | Verified pediatricians",
   description:
-    "Browse verified occupational therapists across the US and Canada. Fine motor skills, sensory processing, daily living activities and more — all rated 3 stars or higher on Google Maps.",
+    "Browse verified pediatricians across the US and Canada. Fine motor skills, sensory processing, daily living activities and more — all rated 3 stars or higher on Google Maps.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title:
-      "occupational therapist Directory USA & Canada | Verified occupational therapists",
+      "Pediatrician Directory USA & Canada | Verified pediatricians",
     description:
-      "Browse verified occupational therapists across the US and Canada. fine motor skills, sensory processing, daily living activities, and more — all rated 3 stars or higher on Google Maps.",
+      "Browse verified pediatricians across the US and Canada. fine motor skills, sensory processing, daily living activities, and more — all rated 3 stars or higher on Google Maps.",
     url: "/",
-    siteName: "occupationaltherapydirectories.com",
+    siteName: "pediatriciandirectories.com",
     type: "website",
     images: [
       {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "occupationaltherapydirectories.com homepage preview",
+        alt: "pediatriciandirectories.com homepage preview",
       },
     ],
   },
@@ -51,8 +51,8 @@ export default async function Home() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "occupationaltherapydirectories.com",
-        item: "https://occupationaltherapydirectories.com/",
+        name: "pediatriciandirectories.com",
+        item: "https://pediatriciandirectories.com/",
       },
     ],
   };
@@ -67,13 +67,13 @@ export default async function Home() {
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
           <div className="space-y-6 text-foreground">
             <p className="inline-flex rounded-full border border-teal bg-surface px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-foreground">
-              occupational therapy Directories
+              Pediatrician Directories
             </p>
             <h1 className="text-balance text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">
-              Find Trusted occupational therapists — State by State
+              Find Trusted Pediatricians — State by State
             </h1>
             <p className="max-w-2xl text-balance text-sm sm:text-base text-foreground/80">
-              Verified occupational therapists and services across the US and
+              Verified pediatricians and services across the US and
               Canada. Every practice rated 3★ or higher on Google Maps.
             </p>
           </div>
@@ -83,7 +83,7 @@ export default async function Home() {
               Start with a state directory
             </h2>
             <p className="mt-2 text-sm text-foreground/90">
-              Browse verified occupational therapists by state, then drill down by
+              Browse verified pediatricians by state, then drill down by
               city to compare services and contact details.
             </p>
 
@@ -115,10 +115,10 @@ export default async function Home() {
 
       <section className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-semibold text-navy">
-          Canadian occupational therapist Directories
+          Canadian Pediatrician Directories
         </h2>
         <p className="mt-2 text-sm text-slate-600">
-          Browse verified occupational therapists by Canadian province. Same
+          Browse verified pediatricians by Canadian province. Same
           directory experience — province by province, then by city.
         </p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -146,11 +146,11 @@ export default async function Home() {
         return (
           <section className="mx-auto max-w-6xl rounded-2xl border-2 border-teal/20 bg-surface px-4 py-10 sm:px-6 lg:px-8">
             <h2 className="text-xl font-semibold text-foreground">
-              Featured occupational therapists
+              Featured pediatricians
             </h2>
             <p className="mt-1 text-sm text-slate-600">
               Selected practices across our directories — verified listings for
-              families comparing repair options.
+              families comparing pediatrician options.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {allFeatured.map((facility) => (
@@ -162,7 +162,7 @@ export default async function Home() {
       })()}
 
       <p className="mx-auto max-w-2xl rounded-lg border-2 border-teal/40 bg-surface px-4 py-3 text-center text-sm text-slate-700">
-        Auto practice owners: Get featured at the top of your city listing.{" "}
+        Pediatrician practice owners: Get featured at the top of your city listing.{" "}
         <Link
           href="/advertise"
           className="font-medium text-teal underline underline-offset-2 hover:text-teal-soft"
@@ -171,10 +171,10 @@ export default async function Home() {
         </Link>{" "}
         or contact{" "}
         <a
-          href="mailto:support@occupationaltherapydirectories.com"
+          href="mailto:support@pediatriciandirectories.com"
           className="font-medium text-teal underline underline-offset-2 hover:text-teal-soft"
         >
-          support@occupationaltherapydirectories.com
+          support@pediatriciandirectories.com
         </a>
         .
       </p>
@@ -183,7 +183,7 @@ export default async function Home() {
         <div className="mx-auto grid max-w-6xl gap-4 px-4 py-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
           <div className="rounded-xl border-2 border-teal/30 bg-surface p-4 text-center shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wide text-teal">
-              Verified occupational therapists
+              Verified pediatricians
             </p>
             <p className="mt-2 text-2xl font-semibold text-foreground">
               {globalStats.totalFacilities.toLocaleString()}
@@ -242,7 +242,7 @@ export default async function Home() {
                 Browse by city
               </h3>
               <p className="mt-2 text-sm text-slate-600">
-                Compare local options by city with ratings, repair services,
+                Compare local options by city with ratings, pediatric care services,
                 and contact details.
               </p>
             </div>
@@ -251,7 +251,7 @@ export default async function Home() {
                 3️⃣
               </p>
               <h3 className="mt-3 text-lg font-semibold text-foreground">
-                Contact occupational therapists directly
+                Contact pediatricians directly
               </h3>
               <p className="mt-2 text-sm text-slate-600">
                 Use website and maps links to verify details and contact
@@ -302,10 +302,10 @@ export default async function Home() {
         <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-gold/50 bg-surface p-6 text-foreground ring-1 ring-gold/30">
             <h2 className="text-2xl font-semibold text-foreground">
-              Are You an occupational therapist Owner?
+              Are You a Pediatrician Practice Owner?
             </h2>
             <p className="mt-3 max-w-3xl text-sm text-foreground/90">
-              Get your practice seen by caregivers actively searching for occupational therapy
+              Get your practice seen by caregivers actively searching for pediatrician
               options in your city. Featured listings available.
             </p>
             <div className="mt-5">
