@@ -6,17 +6,17 @@ import { getDirectoryIndex, getStateSummary, getGlobalStats } from "@/lib/stateF
 
 export const metadata: Metadata = {
   title:
-    "Dental Directory USA & Canada | Verified dentists",
+    "Dental Directory USA | Verified dentists",
   description:
-    "Browse verified dentists and dental practices across the US and Canada — all rated 3 stars or higher on Google Maps.",
+    "Browse verified dentists and dental practices across the United States — all rated 3 stars or higher on Google Maps.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title:
-      "Dental Directory USA & Canada | Verified dentists",
+      "Dental Directory USA | Verified dentists",
     description:
-      "Browse verified dentists and dental practices across the US and Canada — all rated 3 stars or higher on Google Maps.",
+      "Browse verified dentists and dental practices across the United States — all rated 3 stars or higher on Google Maps.",
     url: "/",
     siteName: "DentistryDirectories.com",
     type: "website",
@@ -73,8 +73,8 @@ export default async function Home() {
               Find Trusted Dentists — State by State
             </h1>
             <p className="max-w-2xl text-balance text-sm sm:text-base text-foreground/80">
-              Verified dentists and dental services across the US and
-              Canada. Every practice rated 3★ or higher on Google Maps.
+              Verified dentists and dental services across the United States.
+              Every practice rated 3★ or higher on Google Maps.
             </p>
           </div>
 
@@ -113,29 +113,31 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-semibold text-navy">
-          Canadian Dentistry Directories
-        </h2>
-        <p className="mt-2 text-sm text-slate-600">
-          Browse verified dentists by Canadian province. Same
-          directory experience — province by province, then by city.
-        </p>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {canadaDirectory.map((item) => (
-            <Link
-              key={item.provinceSlug}
-              href={`/canada/${item.provinceSlug}`}
-              className="rounded-xl border-2 border-gold bg-surface px-5 py-4 text-left text-navy transition hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <p className="text-lg font-semibold">{item.provinceName}</p>
-              <p className="mt-1 text-sm text-gold-soft">
-                {item.provinceName} — {item.totalFacilities.toLocaleString()} practices
-              </p>
-            </Link>
-          ))}
-        </div>
-      </section>
+      {canadaDirectory.length > 0 && (
+        <section className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-navy">
+            Canadian Dentistry Directories
+          </h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Browse verified dentists by Canadian province. Same
+            directory experience — province by province, then by city.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {canadaDirectory.map((item) => (
+              <Link
+                key={item.provinceSlug}
+                href={`/canada/${item.provinceSlug}`}
+                className="rounded-xl border-2 border-gold bg-surface px-5 py-4 text-left text-navy transition hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <p className="text-lg font-semibold">{item.provinceName}</p>
+                <p className="mt-1 text-sm text-gold-soft">
+                  {item.provinceName} — {item.totalFacilities.toLocaleString()} practices
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {(() => {
         const allFeatured = stateSummaries

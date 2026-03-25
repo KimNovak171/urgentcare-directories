@@ -246,7 +246,10 @@ function loadUsStateFacilities(stateSlug: string): RawFacility[] {
   }
 }
 
-/** Batch-load every discovered US `*_facilities.json` at module init (single pass). */
+/**
+ * Batch-load every discovered US `*_facilities.json` at module init (single pass).
+ * Each state uses `loadUsStateFacilities` → `fs.readFileSync` + try/catch → `[]` on failure.
+ */
 const STATE_DATA: Record<string, RawFacility[]> = {};
 for (const slug of US_STATE_SLUGS) {
   STATE_DATA[slug] = loadUsStateFacilities(slug);
@@ -504,6 +507,7 @@ export function getGlobalStats(): GlobalStats {
   const usCityKeys = new Set<string>();
   const ratings: number[] = [];
 
+  // US totals from STATE_DATA; Canada added via getCanadaStatsForGlobal() when province JSON exists.
   for (const slug of US_STATE_SLUGS) {
     const facilities = STATE_DATA[slug] ?? [];
     totalFacilities += facilities.length;
